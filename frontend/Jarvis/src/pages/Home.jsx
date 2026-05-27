@@ -3,135 +3,172 @@ import { Link } from 'react-router-dom'
 function Home() {
 
   return (
-    <div className='min-h-screen bg-slate-950 text-white overflow-hidden'>
 
-      {/* Navbar */}
+    <div className='relative min-h-screen overflow-hidden bg-[#050816] text-white'>
 
-      <nav className='flex justify-between items-center px-10 py-6 border-b border-white/10 backdrop-blur-lg'>
+      {/* Background Glow */}
 
-        <h1 className='text-4xl font-bold text-cyan-400'>
-          AETHER
-        </h1>
+      <div className='absolute top-[-200px] left-[-100px] h-[500px] w-[500px] rounded-full bg-violet-600/20 blur-3xl'></div>
 
-        <div className='flex gap-5'>
+      <div className='absolute bottom-[-200px] right-[-100px] h-[500px] w-[500px] rounded-full bg-cyan-500/10 blur-3xl'></div>
 
-          <Link
-            to='/login'
-            className='px-6 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 transition-all'
-          >
-            Login
-          </Link>
+      {/* Grid Overlay */}
 
-          
+      <div className='absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:40px_40px]'></div>
 
-        </div>
+      {/* Main Content */}
 
-      </nav>
+      <div className='relative z-10'>
 
-      {/* Hero Section */}
+        {/* Navbar */}
 
-      <div className='flex flex-col justify-center items-center text-center px-6 py-28'>
+        <nav className='flex items-center justify-between px-10 py-6 border-b border-white/10 backdrop-blur-xl'>
 
-        <h1 className='text-7xl font-extrabold leading-tight max-w-6xl bg-linear-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent'>
+          <h1 className='text-4xl font-black tracking-wider bg-gradient-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent'>
+            AETHER
+          </h1>
 
-          AI-Powered Smart Workplace Management System
+          <div className='flex gap-5'>
 
-        </h1>
+            <Link
+              to='/login'
+              className='px-6 py-3 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-lg hover:bg-white/10 transition-all duration-300'
+            >
+              Login
+            </Link>
 
-        <p className='text-slate-400 text-2xl mt-8 max-w-3xl leading-relaxed'>
+            <Link
+              to='/register'
+              className='px-6 py-3 rounded-2xl bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-500 hover:to-indigo-500 transition-all duration-300 shadow-xl shadow-violet-500/30'
+            >
+              Get Started
+            </Link>
 
-          Manage tasks, meetings, analytics, AI insights,
-          team collaboration, and voice-powered workflows
-          with a futuristic enterprise platform.
+          </div>
 
-        </p>
+        </nav>
 
-        <div className='flex gap-6 mt-12'>
+        {/* Hero Section */}
 
-          <Link
-            to='/register'
-            className='bg-cyan-500 hover:bg-cyan-600 px-8 py-4 rounded-2xl text-xl font-semibold transition-all shadow-2xl shadow-cyan-500/40'
-          >
-            Start Free
-          </Link>
+        <section className='flex flex-col items-center justify-center text-center px-6 pt-32 pb-28'>
 
-          <Link
-            to='/login'
-            className='border border-cyan-500 text-cyan-400 hover:bg-cyan-500/10 px-8 py-4 rounded-2xl text-xl font-semibold transition-all'
-          >
-            Login
-          </Link>
+          <div className='mb-6 px-5 py-2 rounded-full border border-violet-500/20 bg-violet-500/10 backdrop-blur-lg text-violet-300 text-sm tracking-wide'>
+            NEXT GENERATION AI WORKSPACE
+          </div>
 
-        </div>
+          <h1 className='max-w-6xl text-6xl md:text-8xl font-black leading-[1.05]'>
+
+            <span className='bg-gradient-to-r from-white via-violet-200 to-cyan-300 bg-clip-text text-transparent'>
+
+              AI-Powered Smart Workplace Management
+
+            </span>
+
+          </h1>
+
+          <p className='mt-10 max-w-3xl text-xl text-slate-400 leading-relaxed'>
+
+            Transform workplace productivity using intelligent automation,
+            voice-powered workflows, AI analytics, smart collaboration,
+            and futuristic enterprise management.
+
+          </p>
+
+          <div className='mt-14 flex flex-wrap justify-center gap-6'>
+
+            <Link
+              to='/register'
+              className='group relative overflow-hidden rounded-2xl bg-gradient-to-r from-violet-600 to-indigo-600 px-9 py-4 text-lg font-semibold transition-all duration-300 hover:scale-105 shadow-2xl shadow-violet-500/30'
+            >
+
+              <span className='relative z-10'>
+                Start Free
+              </span>
+
+              <div className='absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-all'></div>
+
+            </Link>
+
+            <Link
+              to='/login'
+              className='rounded-2xl border border-white/10 bg-white/5 backdrop-blur-lg px-9 py-4 text-lg font-semibold hover:bg-white/10 transition-all duration-300'
+            >
+              Login
+            </Link>
+
+          </div>
+
+        </section>
+
+        {/* Features */}
+
+        <section className='grid grid-cols-1 md:grid-cols-3 gap-8 px-10 pb-28'>
+
+          <div className='group rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl p-8 hover:border-violet-500/40 transition-all duration-500 hover:-translate-y-2'>
+
+            <div className='mb-6 text-6xl'>
+              🤖
+            </div>
+
+            <h2 className='mb-4 text-3xl font-bold text-white'>
+              AI Assistant
+            </h2>
+
+            <p className='text-slate-400 leading-relaxed text-lg'>
+              Intelligent AI assistant for workplace automation,
+              smart recommendations, scheduling, and advanced insights.
+            </p>
+
+          </div>
+
+          <div className='group rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl p-8 hover:border-cyan-500/40 transition-all duration-500 hover:-translate-y-2'>
+
+            <div className='mb-6 text-6xl'>
+              📊
+            </div>
+
+            <h2 className='mb-4 text-3xl font-bold text-white'>
+              Productivity Analytics
+            </h2>
+
+            <p className='text-slate-400 leading-relaxed text-lg'>
+              Real-time productivity tracking, AI insights,
+              collaboration metrics, and enterprise reporting.
+            </p>
+
+          </div>
+
+          <div className='group rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl p-8 hover:border-pink-500/40 transition-all duration-500 hover:-translate-y-2'>
+
+            <div className='mb-6 text-6xl'>
+              🎤
+            </div>
+
+            <h2 className='mb-4 text-3xl font-bold text-white'>
+              Voice Intelligence
+            </h2>
+
+            <p className='text-slate-400 leading-relaxed text-lg'>
+              Execute commands, manage workflows,
+              and interact with your workspace using voice AI.
+            </p>
+
+          </div>
+
+        </section>
+
+        {/* Footer */}
+
+        <footer className='border-t border-white/10 py-8 text-center text-slate-500 backdrop-blur-xl'>
+
+          © 2026 AETHER AI Platform · All rights reserved
+
+        </footer>
 
       </div>
-
-      {/* Features Section */}
-
-      <div className='grid grid-cols-1 md:grid-cols-3 gap-8 px-10 pb-24'>
-
-        <div className='bg-white/5 border border-white/10 backdrop-blur-lg rounded-3xl p-8 hover:border-cyan-500/50 transition-all'>
-
-          <div className='text-5xl mb-6'>
-            🤖
-          </div>
-
-          <h2 className='text-3xl font-bold mb-4 text-cyan-400'>
-            AI Assistant
-          </h2>
-
-          <p className='text-slate-400 text-lg leading-relaxed'>
-            Smart AI assistant for productivity insights,
-            scheduling, recommendations, and workplace automation.
-          </p>
-
-        </div>
-
-        <div className='bg-white/5 border border-white/10 backdrop-blur-lg rounded-3xl p-8 hover:border-cyan-500/50 transition-all'>
-
-          <div className='text-5xl mb-6'>
-            📊
-          </div>
-
-          <h2 className='text-3xl font-bold mb-4 text-cyan-400'>
-            Productivity Analytics
-          </h2>
-
-          <p className='text-slate-400 text-lg leading-relaxed'>
-            Track employee performance, productivity trends,
-            AI insights, and team collaboration metrics.
-          </p>
-
-        </div>
-
-        <div className='bg-white/5 border border-white/10 backdrop-blur-lg rounded-3xl p-8 hover:border-cyan-500/50 transition-all'>
-
-          <div className='text-5xl mb-6'>
-            🎤
-          </div>
-
-          <h2 className='text-3xl font-bold mb-4 text-cyan-400'>
-            Voice Commands
-          </h2>
-
-          <p className='text-slate-400 text-lg leading-relaxed'>
-            Control tasks, meetings, and AI workflows
-            using modern voice-powered interactions.
-          </p>
-
-        </div>
-
-      </div>
-
-      {/* Footer */}
-
-      <footer className='border-t border-white/10 py-8 text-center text-slate-500'>
-
-        © 2026 Smart Office AI Platform|All rights reserved <br />Harshit Verma
-
-      </footer>
 
     </div>
+
   )
 }
 
