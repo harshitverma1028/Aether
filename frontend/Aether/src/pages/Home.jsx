@@ -8,13 +8,13 @@ function Home() {
 
       {/* Background Glow */}
 
-      <div className='absolute top-[-200px] left-[-100px] h-[500px] w-[500px] rounded-full bg-violet-600/20 blur-3xl'></div>
+      <div className='absolute -top-50 -left-25 h-125 w-125 rounded-full bg-violet-600/20 blur-3xl'></div>
 
-      <div className='absolute bottom-[-200px] right-[-100px] h-[500px] w-[500px] rounded-full bg-cyan-500/10 blur-3xl'></div>
+      <div className='absolute -bottom-50 -right-25 h-125 w-125 rounded-full bg-cyan-500/10 blur-3xl'></div>
 
       {/* Grid Overlay */}
 
-      <div className='absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:40px_40px]'></div>
+      <div className='absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-size:[40px_40px]'></div>
 
       {/* Main Content */}
 
@@ -24,7 +24,7 @@ function Home() {
 
         <nav className='flex items-center justify-between px-10 py-6 border-b border-white/10 backdrop-blur-xl'>
 
-          <h1 className='text-4xl font-black tracking-wider bg-gradient-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent'>
+          <h1 className='text-4xl font-black tracking-wider bg-linear-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent'>
             AETHER
           </h1>
 
@@ -39,7 +39,7 @@ function Home() {
 
             <Link
               to='/register'
-              className='px-6 py-3 rounded-2xl bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-500 hover:to-indigo-500 transition-all duration-300 shadow-xl shadow-violet-500/30'
+              className='px-6 py-3 rounded-2xl bg-linear-to-r from-violet-600 to-indigo-600 hover:from-violet-500 hover:to-indigo-500 transition-all duration-300 shadow-xl shadow-violet-500/30'
             >
               Get Started
             </Link>
@@ -58,7 +58,7 @@ function Home() {
 
           <h1 className='max-w-6xl text-6xl md:text-8xl font-black leading-[1.05]'>
 
-            <span className='bg-gradient-to-r from-white via-violet-200 to-cyan-300 bg-clip-text text-transparent'>
+            <span className='bg-linear-to-r from-white via-violet-200 to-cyan-300 bg-clip-text text-transparent'>
 
               AI-Powered Smart Workplace Management
 
@@ -78,7 +78,7 @@ function Home() {
 
             <Link
               to='/register'
-              className='group relative overflow-hidden rounded-2xl bg-gradient-to-r from-violet-600 to-indigo-600 px-9 py-4 text-lg font-semibold transition-all duration-300 hover:scale-105 shadow-2xl shadow-violet-500/30'
+              className='group relative overflow-hidden rounded-2xl bg-linear-to-r from-violet-600 to-indigo-600 px-9 py-4 text-lg font-semibold transition-all duration-300 hover:scale-105 shadow-2xl shadow-violet-500/30'
             >
 
               <span className='relative z-10'>
@@ -161,7 +161,7 @@ function Home() {
 
         <footer className='border-t border-white/10 py-8 text-center text-slate-500 backdrop-blur-xl'>
 
-          © 2026 AETHER AI Platform · All rights reserved
+          © 2026 AETHER AI Platform | All rights reserved <br />Harshit Verma
 
         </footer>
 
