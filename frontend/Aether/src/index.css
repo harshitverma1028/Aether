@@ -3,16 +3,9 @@
 @import "@fontsource/poppins";
 
 body {
-  margin: 0;
-  padding: 0;
+  @apply bg-linear-to-br from-black via-blue-950 to-zinc-950 text-white min-h-screen overflow-x-hidden;
+  
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(
-    135deg,
-    #020617,
-    #0f172a,
-    #111827
-  );
-  color: white;
 }
 
 ::-webkit-scrollbar {
