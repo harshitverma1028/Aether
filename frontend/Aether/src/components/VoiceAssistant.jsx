@@ -83,9 +83,6 @@ function VoiceAssistant() {
 
   const handleCommand = async (command) => {
 
-
-
-    
     const text = command.toLowerCase()
 
     console.log(text)
@@ -130,20 +127,15 @@ function VoiceAssistant() {
 
 
 
-       await axios.post(
-  'http://localhost:5000/api/tasks',
-  {
-    title,
-    description,
-    priority: 'Medium',
-    status: 'Pending',
-  },
-  {
-    headers: {
-      Authorization: `Bearer ${localStorage.getItem('token')}`,
-    },
-  }
-)
+        await axios.post(
+          'http://localhost:5000/api/tasks',
+          {
+            title,
+            description,
+            priority: 'Medium',
+            status: 'Pending',
+          }
+        )
 
 
 

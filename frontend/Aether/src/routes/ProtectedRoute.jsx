@@ -5,7 +5,7 @@ function ProtectedRoute({ children }) {
   const token = useAuthStore((state) => state.token)
 
   if (!token) {
-    return <Navigate to='/home' />
+    return <Navigate to='/' />
   }
 
   return children
