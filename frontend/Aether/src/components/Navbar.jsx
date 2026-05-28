@@ -14,7 +14,7 @@ function Navbar() {
 
 
   return (
-    <div className='w-full bg-slate-900/70 backdrop-blur-lg border-b border-white/10 p-5 flex justify-between items-center'>
+    <div className='w-full bg-black/30 backdrop-blur-xl backdrop-blur-lg border-b border-white/10 p-5 flex justify-between items-center'>
       
       <div>
         <h2 className='text-2xl font-bold'>

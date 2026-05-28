@@ -9,7 +9,7 @@ import {
 
 function Sidebar() {
   return (
-    <div className="w-72 h-screen bg-slate-900 border-r border-slate-800 p-6 fixed left-0 top-0">
+    <div className="w-72 h-screen bg-transparent border-r border-slate-800 p-6 fixed left-0 top-0">
       <h1 className="text-3xl font-bold text-cyan-400 mb-12">
         AETHER
       </h1>
