@@ -35,9 +35,9 @@ function Register() {
         onSubmit={handleSubmit}
         className='w-full max-w-md bg-white/5 backdrop-blur-lg border border-white/10 rounded-3xl p-8'
       >
-        <h1 className='text-4xl font-bold text-center text-cyan-400'>
-          Register
-        </h1>
+        <h1 className='text-4xl font-black tracking-wider bg-linear-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent' >
+               <center>AETHER</center>
+          </h1>
 
         <div className='mt-8 flex flex-col gap-5'>
           <input
