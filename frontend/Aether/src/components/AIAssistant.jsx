@@ -183,7 +183,7 @@ function VoiceAssistant() {
       text.includes('open tasks') ||
       text.includes('show tasks') ||
       text.includes('show task') ||
-      text.includes('open tasks') ||
+      text.includes('open task') ||
       text.includes('open task page') ||
       text.includes('show task page') 
     ) {
@@ -232,7 +232,8 @@ function VoiceAssistant() {
     if (
       text.includes('logout') ||
       text.includes('log out') ||
-      text.includes('sign out')
+      text.includes('sign out') ||
+      text.includes('signout')
     ) {
 
       logout()
