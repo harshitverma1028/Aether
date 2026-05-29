@@ -48,11 +48,13 @@ function VoiceAssistant() {
     recognition.onresult = (event) => {
 
       const text =
-        event.results[0][0].transcript
+  event.results[0][0].transcript
 
-      setTranscript(text)
+alert(`Heard: ${text}`)
 
-      handleCommand(text)
+setTranscript(text)
+
+handleCommand(text)
     }
 
     recognition.onend = () => {
@@ -83,205 +85,239 @@ function VoiceAssistant() {
 
   const handleCommand = async (command) => {
 
-    const text = command.toLowerCase()
+  const text = command.toLowerCase().trim()
 
-    console.log(text)
+  console.log('Voice Command:', text)
 
-    // CREATE TASK USING VOICE
+  // =========================
+  // CREATE TASK
+  // =========================
 
-    if (
-      text.includes('create task')
-    ) {
+  if (
+    text.includes('task') &&
+    (
+      text.includes('create') ||
+      text.includes('add')
+    )
+  ) {
 
-      try {
+    try {
 
-        let title = 'Untitled Task'
+      let title = 'Untitled Task'
+      let description = ''
 
-        let description = ''
-
-        // Extract title
-
-        if (
-          text.includes('title')
-        ) {
-
-          title =
-            text.split('title')[1]
-              ?.split('description')[0]
-              ?.trim()
-        }
-
-        // Extract description
-
-        if (
-          text.includes('description')
-        ) {
-
-          description =
-            text.split('description')[1]
-              ?.trim()
-        }
-
-        // CREATE TASK API
-
-
-
-
-        await axios.post(
-          'http://localhost:5000/api/tasks',
-          {
-            title,
-            description,
-            priority: 'Medium',
-            status: 'Pending',
-          }
+      const titleMatch =
+        text.match(
+          /(?:title|titled)\s(.*?)(?:description|$)/
         )
 
-
-
-        const successMessage =
-          `Task ${title} created successfully`
-
-        setAiResponse(successMessage)
-
-        speakResponse(successMessage)
-
-        // Refresh Tasks Page
-
-        window.dispatchEvent(
-          new Event('taskCreated')
-        )
-
-      } catch (error) {
-
-        console.log(error)
-
-        setAiResponse(
-          'Failed to create task'
-        )
-
-        speakResponse(
-          'Failed to create task'
-        )
+      if (titleMatch) {
+        title = titleMatch[1].trim()
       }
-    }
 
-    // OPEN TASKS
+      const descMatch =
+        text.match(
+          /description\s(.*)/
+        )
 
-    else if (
-      text.includes('open tasks') ||
-      text.includes('show tasks')
-    ) {
+      if (descMatch) {
+        description = descMatch[1].trim()
+      }
 
-      speakResponse('Opening tasks')
-
-      window.location.href = '/tasks'
-    }
-
-    // OPEN MEETINGS
-
-    else if (
-      text.includes('open meetings') ||
-      text.includes('show meetings')
-    ) {
-
-      speakResponse('Opening meetings')
-
-      window.location.href = '/meetings'
-    }
-
-    // DASHBOARD
-
-    else if (
-      text.includes('dashboard')
-    ) {
-
-      speakResponse('Opening dashboard')
-
-      window.location.href = '/dashboard'
-    }
-
-    // OPEN AI PAGE
-
-    else if (
-      text.includes('open ai')
-    ) {
-
-      speakResponse(
-        'Opening AI assistant'
+      await axios.post(
+        'http://localhost:5000/api/tasks',
+        {
+          title,
+          description,
+          priority: 'Medium',
+          status: 'Pending'
+        }
       )
 
-      window.location.href =
-        '/ai-assistant'
-    }
+      const msg =
+        `Task ${title} created successfully`
 
-    // LOGOUT
+      setAiResponse(msg)
 
-    else if (
+      speakResponse(msg)
 
-      text.includes('logout') ||
+      window.dispatchEvent(
+        new Event('taskCreated')
+      )
 
-      text.includes('log out') ||
+      return
 
-      text.includes('sign out')
+    } catch (error) {
 
-    ) {
+      console.log(error)
 
-      speakResponse('Logging out')
+      setAiResponse(
+        'Failed to create task'
+      )
 
-      logout()
+      speakResponse(
+        'Failed to create task'
+      )
 
-      localStorage.clear()
-
-      setTimeout(() => {
-
-        window.location.replace('/')
-
-      }, 1500)
-    }
-
-    // AI CHAT
-
-    else {
-
-      try {
-
-        const response = await fetch(
-          'http://127.0.0.1:8000/ask-ai',
-          {
-            method: 'POST',
-
-            headers: {
-              'Content-Type':
-                'application/json',
-            },
-
-            body: JSON.stringify({
-              prompt: text,
-            }),
-          }
-        )
-
-        const data = await response.json()
-
-        setAiResponse(data.response)
-
-        speakResponse(data.response)
-
-      } catch (error) {
-
-        console.log(error)
-
-        setAiResponse(
-          'AI Service is not running'
-        )
-
-        speakResponse(
-          'AI Service is not running'
-        )
-      }
+      return
     }
   }
+
+  // =========================
+  // CREATE MEETING
+  // =========================
+
+  if (
+    
+    text.includes('meeting') &&
+    (
+      text.includes('schedule') ||
+      text.includes('create')
+    )
+  ) {
+      console.log('MEETING BLOCK ENTERED')
+    try {
+
+      let title = 'New Meeting'
+
+      title = text
+        .replace('schedule', '')
+        .replace('create', '')
+        .replace('meeting', '')
+        .trim()
+
+      if (!title) {
+        title = 'New Meeting'
+      }
+
+      await axios.post(
+        'http://localhost:5000/api/meetings',
+        {
+          title,
+          status: 'Scheduled'
+        }
+      )
+
+      const msg =
+        `Meeting ${title} scheduled successfully`
+
+      setAiResponse(msg)
+
+      speakResponse(msg)
+
+      window.dispatchEvent(
+        new Event('meetingCreated')
+      )
+
+      return
+
+    } catch (error) {
+
+      console.log(error)
+
+      setAiResponse(
+        'Failed to schedule meeting'
+      )
+
+      speakResponse(
+        'Failed to schedule meeting'
+      )
+
+      return
+    }
+  }
+
+  // =========================
+  // OPEN TASKS
+  // =========================
+
+  if (
+    text.includes('open tasks') ||
+    text.includes('show tasks')
+  ) {
+
+    window.location.href = '/tasks'
+    return
+  }
+
+  // =========================
+  // OPEN MEETINGS
+  // =========================
+
+  if (
+    text.includes('open meetings') ||
+    text.includes('show meetings')
+  ) {
+
+    window.location.href = '/meetings'
+    return
+  }
+
+  // =========================
+  // DASHBOARD
+  // =========================
+
+  if (
+    text.includes('dashboard')
+  ) {
+
+    window.location.href = '/dashboard'
+    return
+  }
+
+  // =========================
+  // LOGOUT
+  // =========================
+
+  if (
+    text.includes('logout') ||
+    text.includes('log out') ||
+    text.includes('sign out')
+  ) {
+
+    logout()
+
+    localStorage.clear()
+
+    window.location.href = '/'
+
+    return
+  }
+
+  // =========================
+  // AI CHAT
+  // =========================
+
+  try {
+
+    const response = await fetch(
+      'http://127.0.0.1:8000/ask-ai',
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          prompt: text
+        })
+      }
+    )
+
+    const data = await response.json()
+
+    setAiResponse(data.response)
+
+    speakResponse(data.response)
+
+  } catch (error) {
+
+    console.log(error)
+
+    setAiResponse(
+      'AI Service is not running'
+    )
+  }
+}
 
   // External Trigger Listener
 
