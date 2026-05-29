@@ -14,7 +14,7 @@ function Navbar() {
 
 
   return (
-    <div className='w-full bg-black/30 backdrop-blur-xl backdrop-blur-lg border-b border-white/10 p-5 flex justify-between items-center'>
+    <div className='w-full bg-black/30  backdrop-blur-lg border-b border-white/10 p-5 flex justify-between items-center'>
       
       <div>
         <h1 className='text-4xl font-black tracking-wider bg-linear-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent'>
