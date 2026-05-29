@@ -17,9 +17,9 @@ function Navbar() {
     <div className='w-full bg-black/30 backdrop-blur-xl backdrop-blur-lg border-b border-white/10 p-5 flex justify-between items-center'>
       
       <div>
-        <h2 className='text-2xl font-bold'>
-          AI Workplace Dashboard
-        </h2>
+        <h1 className='text-4xl font-black tracking-wider bg-linear-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent'>
+            AETHER
+          </h1>
 
         <p className='text-slate-400 text-sm mt-1'>
           Smart AI-powered office management system

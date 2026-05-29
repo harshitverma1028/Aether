@@ -26,6 +26,9 @@ function Sidebar() {
           Dashboard
         </Link>
 
+
+
+
         <Link
           to="/tasks"
           className="flex items-center gap-4 hover:bg-cyan-500/20 p-4 rounded-xl transition-all"

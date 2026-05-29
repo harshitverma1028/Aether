@@ -13,6 +13,7 @@ import ProtectedRoute from './ProtectedRoute'
 import AdminRoute from './AdminRoute'
 import Home from '../pages/Home'
 
+
 function AppRoutes() {
 
   return (
@@ -31,7 +32,7 @@ function AppRoutes() {
     </ProtectedRoute>
   }
 />
-
+ 
       <Route
         path='/tasks'
         element={
