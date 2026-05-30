@@ -240,9 +240,9 @@ handleCommand(text)
     return
   }
 
-  // =========================
+  // 
   // OPEN MEETINGS
-  // =========================
+  // 
 
   if (
     text.includes('open meetings') ||
@@ -253,9 +253,9 @@ handleCommand(text)
     return
   }
 
-  // =========================
+  // 
   // DASHBOARD
-  // =========================
+  //
 
   if (
     text.includes('dashboard')
@@ -265,9 +265,9 @@ handleCommand(text)
     return
   }
 
-  // =========================
+  //
   // LOGOUT
-  // =========================
+  //
 
   if (
     text.includes('logout') ||
@@ -284,9 +284,9 @@ handleCommand(text)
     return
   }
 
-  // =========================
+  //
   // AI CHAT
-  // =========================
+  // 
 
   try {
 
@@ -388,7 +388,7 @@ handleCommand(text)
 
       </div>
 
-      <div className='mt-6 text-slate-400'>
+      <div className='mt-6 text-white'>
 
         Try saying:
 
