@@ -12,7 +12,7 @@ import ProductivityInsights from '../components/ProductivityInsights'
 
 function Dashboard() {
   return (
-    <div className="flex bg-slate-950 min-h-screen text-white">
+    <div className="flex bg-linear min-h-screen text-white">
       <Sidebar />
 
       <div className='flex-1 ml-72'>

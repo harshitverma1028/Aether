@@ -5,7 +5,7 @@ import AIAssistant from '../components/AIAssistant'
 function AIAssistantPage() {
 
   return (
-    <div className='flex bg-slate-950 min-h-screen text-white'>
+    <div className='flex bg-transparent min-h-screen text-white'>
 
       <Sidebar />
 

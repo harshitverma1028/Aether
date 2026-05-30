@@ -79,7 +79,7 @@ function Meetings() {
   }
 
   return (
-    <div className='flex bg-slate-950 min-h-screen text-white'>
+    <div className='flex bg-transparent min-h-screen text-white'>
 
       <Sidebar />
 
@@ -186,7 +186,7 @@ function Meetings() {
                   onClick={() =>
                     handleDelete(meeting._id)
                   }
-                  className='mt-5 bg-red-500 px-5 py-3 rounded-xl hover:bg-red-600'
+                  className='mt-5 bg-blue-600 px-5 py-3 rounded-xl hover:bg-red-600'
                 >
                   Delete
                 </button>

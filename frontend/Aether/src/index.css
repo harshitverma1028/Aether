@@ -2,8 +2,7 @@
 
 @import "@fontsource/poppins";
 
-body {
-  @apply bg-linear-to-br from-black via-blue-950 to-zinc-900 text-white min-h-screen overflow-x-hidden;
+body {@apply bg-gradient-to-br from-slate-950 via-violet-900 to-rose-950 text-white min-h-screen overflow-x-hidden;
   
   font-family: 'Poppins', sans-serif;
 }
