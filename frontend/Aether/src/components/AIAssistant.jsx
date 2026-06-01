@@ -106,7 +106,7 @@ function VoiceAssistant() {
         }
 
         await axios.post(
-          'http://localhost:5000/api/tasks',
+          'https://aether-b14x.onrender.com/api/tasks',
           {
             title,
             priority: 'Medium',
@@ -155,7 +155,7 @@ function VoiceAssistant() {
         }
 
         await axios.post(
-          'http://localhost:5000/api/meetings',
+          'http://https://aether-b14x.onrender.com/api/meetings',
           {
             title,
             status: 'Scheduled'

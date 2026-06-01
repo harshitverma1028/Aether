@@ -37,7 +37,7 @@ export const handleVoiceCommand = async (
       }
 
       await axios.post(
-        'http://localhost:5000/api/tasks',
+        'https://aether-b14x.onrender.com/api/tasks',
         {
           title,
           priority: 'Medium',
@@ -86,7 +86,7 @@ export const handleVoiceCommand = async (
       }
 
       await axios.post(
-        'http://localhost:5000/api/meetings',
+        'https://aether-b14x.onrender.com/api/meetings',
         {
           title,
           status: 'Scheduled'

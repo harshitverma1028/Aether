@@ -24,7 +24,7 @@ const server = http.createServer(app)
 const io = new Server(server, {
   cors: {
     origin: [
-      'http://localhost:5173',
+      'https://aether-b14x.onrender.com',
       'https://aether-theta-two.vercel.app'
     ],
     methods: ['GET', 'POST'],

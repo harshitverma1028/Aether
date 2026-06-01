@@ -125,7 +125,7 @@ handleCommand(text)
       }
 
       await axios.post(
-        'http://localhost:5000/api/tasks',
+        'https://aether-b14x.onrender.com/api/tasks',
         {
           title,
           description,
@@ -191,7 +191,7 @@ handleCommand(text)
       }
 
       await axios.post(
-        'http://localhost:5000/api/meetings',
+        'https://aether-b14x.onrender.com/api/meetings',
         {
           title,
           status: 'Scheduled'
