@@ -26,15 +26,15 @@ function AdminDashboard() {
     try {
 
       const usersRes = await axios.get(
-        'http://localhost:5000/api/admin/users'
+        'https://aether-b14x.onrender.com/api/admin/users'
       )
 
       const tasksRes = await axios.get(
-        'http://localhost:5000/api/tasks'
+        'https://aether-b14x.onrender.com/api/tasks'
       )
 
       const meetingsRes = await axios.get(
-        'http://localhost:5000/api/meetings'
+        'https://aether-b14x.onrender.com/api/meetings'
       )
 
       setUsers(usersRes.data)
