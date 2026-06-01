@@ -25,7 +25,7 @@ function AetherOrb({ listening }) {
         listening
 
           ? `
-          bg-gradient-to-br
+          bg-linear-to-br
           from-cyan-400
           via-blue-500
           to-indigo-600
@@ -38,7 +38,7 @@ function AetherOrb({ listening }) {
           `
 
           : `
-          bg-gradient-to-br
+          bg-linear-to-br
           from-slate-800
           via-slate-900
           to-black
@@ -76,7 +76,7 @@ function AetherOrb({ listening }) {
             w-10
             h-10
 
-            bg-gradient-to-r
+            bg-linear-to-r
             from-cyan-200
             via-white
             to-cyan-200
@@ -90,7 +90,7 @@ function AetherOrb({ listening }) {
             w-6
             h-6
 
-            bg-gradient-to-r
+            bg-linear-to-r
             from-cyan-400
             via-blue-500
             to-indigo-600
