@@ -291,7 +291,7 @@ handleCommand(text)
   try {
 
     const response = await fetch(
-      'http://127.0.0.1:8000/ask-ai',
+      'https://aether-1-rqsx.onrender.com/ask-ai',
       {
         method: 'POST',
         headers: {
