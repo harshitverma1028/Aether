@@ -12,7 +12,7 @@ function Particle({ x, y, size, duration, delay }) {
         top: `${y}%`,
         width: size,
         height: size,
-        background: `radial-gradient(circle, rgba(139,92,246,0.6) 0%, rgba(6,182,212,0.2) 100%)`,
+        background: `radial-linear(circle, rgba(139,92,246,0.6) 0%, rgba(6,182,212,0.2) 100%)`,
       }}
       animate={{
         y: [0, -40, 0],
@@ -74,11 +74,11 @@ function FeatureCard({ icon, title, description, accent, delay }) {
       {/* glow on hover */}
       <div
         className='absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-3xl'
-        style={{ background: `radial-gradient(circle at 50% 0%, ${accent}18 0%, transparent 70%)` }}
+        style={{ background: `radial-linear(circle at 50% 0%, ${accent}18 0%, transparent 70%)` }}
       />
       <div
         className='absolute top-0 left-0 right-0 h-px opacity-0 group-hover:opacity-100 transition-opacity duration-500'
-        style={{ background: `linear-gradient(90deg, transparent, ${accent}80, transparent)` }}
+        style={{ background: `linear-linear(90deg, transparent, ${accent}80, transparent)` }}
       />
 
       <div className='relative z-10'>
@@ -105,7 +105,7 @@ function StepCard({ number, title, description, delay }) {
       transition={{ duration: 0.6, delay, ease: [0.16, 1, 0.3, 1] }}
       className='flex gap-6 items-start'
     >
-      <div className='flex-shrink-0 w-14 h-14 rounded-2xl bg-gradient-to-br from-violet-600/30 to-indigo-600/30 border border-violet-500/30 flex items-center justify-center text-violet-300 font-black text-xl'>
+      <div className='shrink-0 w-14 h-14 rounded-2xl bg-linear-to-br from-violet-600/30 to-indigo-600/30 border border-violet-500/30 flex items-center justify-center text-violet-300 font-black text-xl'>
         {number}
       </div>
       <div>
@@ -133,7 +133,7 @@ function TestimonialCard({ quote, name, role, avatar, delay }) {
       </div>
       <p className='text-slate-300 leading-relaxed mb-6 text-sm italic'>"{quote}"</p>
       <div className='flex items-center gap-3'>
-        <div className='w-10 h-10 rounded-full bg-gradient-to-br from-violet-500 to-cyan-500 flex items-center justify-center text-white font-bold text-sm'>
+        <div className='w-10 h-10 rounded-full bg-linear-to-br from-violet-500 to-cyan-500 flex items-center justify-center text-white font-bold text-sm'>
           {avatar}
         </div>
         <div>
@@ -156,12 +156,12 @@ function PricingCard({ plan, price, features, highlighted, delay }) {
       whileHover={{ y: -6 }}
       className={`relative rounded-3xl p-8 flex flex-col ${
         highlighted
-          ? 'bg-gradient-to-b from-violet-600/20 to-indigo-600/10 border border-violet-500/40'
+          ? 'bg-linear-to-b from-violet-600/20 to-indigo-600/10 border border-violet-500/40'
           : 'bg-white/5 border border-white/10'
       } backdrop-blur-xl`}
     >
       {highlighted && (
-        <div className='absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-gradient-to-r from-violet-600 to-indigo-600 text-xs font-bold text-white'>
+        <div className='absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-linear-to-r from-violet-600 to-indigo-600 text-xs font-bold text-white'>
           MOST POPULAR
         </div>
       )}
@@ -175,7 +175,7 @@ function PricingCard({ plan, price, features, highlighted, delay }) {
       <ul className='space-y-3 flex-1 mb-8'>
         {features.map((f, i) => (
           <li key={i} className='flex items-center gap-3 text-sm text-slate-300'>
-            <span className='w-5 h-5 rounded-full bg-violet-500/20 flex items-center justify-center text-violet-400 text-xs flex-shrink-0'>✓</span>
+            <span className='w-5 h-5 rounded-full bg-violet-500/20 flex items-center justify-center text-violet-400 text-xs shrink-0'>✓</span>
             {f}
           </li>
         ))}
@@ -184,7 +184,7 @@ function PricingCard({ plan, price, features, highlighted, delay }) {
         to='/register'
         className={`w-full text-center py-3 rounded-2xl font-semibold text-sm transition-all duration-300 ${
           highlighted
-            ? 'bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-500 hover:to-indigo-500 text-white shadow-lg shadow-violet-500/30'
+            ? 'bg-linear-to-r from-violet-600 to-indigo-600 hover:from-violet-500 hover:to-indigo-500 text-white shadow-lg shadow-violet-500/30'
             : 'border border-white/10 bg-white/5 hover:bg-white/10 text-white'
         }`}
       >
@@ -289,10 +289,10 @@ function Home() {
       {/* ── Background Glows ── */}
       <div className='absolute -top-50 -left-25 h-125 w-125 rounded-full bg-violet-600/20 blur-3xl pointer-events-none' />
       <div className='absolute -bottom-50 -right-25 h-125 w-125 rounded-full bg-cyan-500/10 blur-3xl pointer-events-none' />
-      <div className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-indigo-900/10 blur-3xl pointer-events-none' />
+      <div className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-200 h-200 rounded-full bg-indigo-900/10 blur-3xl pointer-events-none' />
 
       {/* ── Grid Overlay ── */}
-      <div className='absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none' />
+      <div className='absolute inset-0 bg-[linear-linear(rgba(255,255,255,0.02)_1px,transparent_1px),linear-linear(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-size-[40px_40px] pointer-events-none' />
 
       {/* ── Floating Particles ── */}
       <div className='absolute inset-0 pointer-events-none overflow-hidden'>
@@ -310,7 +310,7 @@ function Home() {
           className='flex items-center justify-between px-10 py-6 border-b border-white/10 backdrop-blur-xl sticky top-0 z-50'
         >
           <motion.h1
-            className='text-4xl font-black tracking-wider bg-gradient-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent'
+            className='text-4xl font-black tracking-wider bg-linear-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent'
             whileHover={{ scale: 1.04 }}
           >
             AETHER
@@ -331,7 +331,7 @@ function Home() {
               Login
             </Link>
             <Link to='/register'
-              className='px-6 py-2.5 rounded-2xl bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-500 hover:to-indigo-500 transition-all duration-300 shadow-xl shadow-violet-500/30 text-sm font-semibold'>
+              className='px-6 py-2.5 rounded-2xl bg-linear-to-r from-violet-600 to-indigo-600 hover:from-violet-500 hover:to-indigo-500 transition-all duration-300 shadow-xl shadow-violet-500/30 text-sm font-semibold'>
               Get Started
             </Link>
           </div>
@@ -357,7 +357,7 @@ function Home() {
             transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
             className='max-w-6xl text-6xl md:text-8xl font-black leading-[1.05]'
           >
-            <span className='bg-gradient-to-r from-white via-violet-200 to-cyan-300 bg-clip-text text-transparent'>
+            <span className='bg-linear-to-r from-white via-violet-200 to-cyan-300 bg-clip-text text-transparent'>
               AI-Powered Smart Workplace Management
             </span>
           </motion.h1>
@@ -379,7 +379,7 @@ function Home() {
             className='mt-14 flex flex-wrap justify-center gap-6'
           >
             <Link to='/register'
-              className='group relative overflow-hidden rounded-2xl bg-gradient-to-r from-violet-600 to-indigo-600 px-9 py-4 text-lg font-semibold transition-all duration-300 hover:scale-105 shadow-2xl shadow-violet-500/30'>
+              className='group relative overflow-hidden rounded-2xl bg-linear-to-r from-violet-600 to-indigo-600 px-9 py-4 text-lg font-semibold transition-all duration-300 hover:scale-105 shadow-2xl shadow-violet-500/30'>
               <span className='relative z-10'>Start Free Trial</span>
               <motion.div
                 className='absolute inset-0 bg-white/10'
@@ -481,7 +481,7 @@ function Home() {
             y: -6,
             scale: 1.03,
           }}
-          className={`rounded-2xl bg-gradient-to-br ${stat.color}
+          className={`rounded-2xl bg-linear-to-br ${stat.color}
           border p-4 backdrop-blur-md transition-all duration-300`}
           style={{
             borderColor: `${stat.accent}50`,
@@ -519,7 +519,7 @@ function Home() {
               style={{
                 height: `${h}%`,
                 background:
-                  'linear-gradient(to top, #8b5cf6, #06b6d4)',
+                  'linear-linear(to top, #8b5cf6, #06b6d4)',
                 boxShadow:
                   '0 0 20px rgba(139,92,246,0.6)',
               }}
@@ -554,7 +554,7 @@ function Home() {
   </div>
 
   {/* Bottom Fade */}
-  <div className='absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#050816] to-transparent pointer-events-none' />
+  <div className='absolute inset-x-0 bottom-0 h-32 bg-linear-to-t from-[#050816] to-transparent pointer-events-none' />
 </motion.div>
         </motion.section>
 
@@ -575,7 +575,7 @@ function Home() {
                 transition={{ duration: 0.5, delay: i * 0.1 }}
                 className='text-center p-6 rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl'
               >
-                <div className='text-4xl font-black bg-gradient-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent'>
+                <div className='text-4xl font-black bg-linear-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent'>
                   <Counter target={s.val} suffix={s.suffix} />
                 </div>
                 <div className='text-slate-400 text-sm mt-1'>{s.label}</div>
@@ -595,7 +595,7 @@ function Home() {
             <div className='inline-block mb-4 px-4 py-1.5 rounded-full border border-violet-500/20 bg-violet-500/10 text-violet-300 text-xs tracking-widest font-semibold'>
               EVERYTHING YOU NEED
             </div>
-            <h2 className='text-5xl font-black bg-gradient-to-r from-white to-slate-300 bg-clip-text text-transparent'>
+            <h2 className='text-5xl font-black bg-linear-to-r from-white to-slate-300 bg-clip-text text-transparent'>
               Built for the Modern Enterprise
             </h2>
             <p className='mt-4 text-slate-400 text-lg max-w-2xl mx-auto'>
@@ -623,7 +623,7 @@ function Home() {
                 <div className='inline-block mb-4 px-4 py-1.5 rounded-full border border-cyan-500/20 bg-cyan-500/10 text-cyan-300 text-xs tracking-widest font-semibold'>
                   HOW IT WORKS
                 </div>
-                <h2 className='text-5xl font-black bg-gradient-to-r from-white to-slate-300 bg-clip-text text-transparent leading-tight'>
+                <h2 className='text-5xl font-black bg-linear-to-r from-white to-slate-300 bg-clip-text text-transparent leading-tight'>
                   From Setup to Supercharged in Minutes
                 </h2>
               </motion.div>
@@ -653,7 +653,7 @@ function Home() {
               ))}
               {/* Core */}
               <motion.div
-                className='w-28 h-28 rounded-full bg-gradient-to-br from-violet-600 to-indigo-600 flex items-center justify-center text-5xl shadow-2xl shadow-violet-500/50'
+                className='w-28 h-28 rounded-full bg-linear-to-br from-violet-600 to-indigo-600 flex items-center justify-center text-5xl shadow-2xl shadow-violet-500/50'
                 animate={{ scale: [1, 1.08, 1] }}
                 transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
               >
@@ -692,7 +692,7 @@ function Home() {
             <div className='inline-block mb-4 px-4 py-1.5 rounded-full border border-emerald-500/20 bg-emerald-500/10 text-emerald-300 text-xs tracking-widest font-semibold'>
               INTEGRATIONS
             </div>
-            <h2 className='text-5xl font-black bg-gradient-to-r from-white to-slate-300 bg-clip-text text-transparent'>
+            <h2 className='text-5xl font-black bg-linear-to-r from-white to-slate-300 bg-clip-text text-transparent'>
               Works With Your Existing Stack
             </h2>
             <p className='mt-4 text-slate-400 max-w-xl mx-auto'>
@@ -702,8 +702,8 @@ function Home() {
 
           {/* Marquee */}
           <div className='relative'>
-            <div className='absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-[#050816] to-transparent z-10 pointer-events-none' />
-            <div className='absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-[#050816] to-transparent z-10 pointer-events-none' />
+            <div className='absolute left-0 top-0 bottom-0 w-32 bg-linear-to-r from-[#050816] to-transparent z-10 pointer-events-none' />
+            <div className='absolute right-0 top-0 bottom-0 w-32 bg-linear-to-l from-[#050816] to-transparent z-10 pointer-events-none' />
             <motion.div
               className='flex gap-6'
               animate={{ x: ['0%', '-50%'] }}
@@ -711,7 +711,7 @@ function Home() {
             >
               {[...integrations, ...integrations].map((name, i) => (
                 <div key={i}
-                  className='flex-shrink-0 px-6 py-3 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl text-slate-300 text-sm font-semibold whitespace-nowrap'>
+                  className='shrink-0 px-6 py-3 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl text-slate-300 text-sm font-semibold whitespace-nowrap'>
                   {name}
                 </div>
               ))}
@@ -730,7 +730,7 @@ function Home() {
             <div className='inline-block mb-4 px-4 py-1.5 rounded-full border border-pink-500/20 bg-pink-500/10 text-pink-300 text-xs tracking-widest font-semibold'>
               TESTIMONIALS
             </div>
-            <h2 className='text-5xl font-black bg-gradient-to-r from-white to-slate-300 bg-clip-text text-transparent'>
+            <h2 className='text-5xl font-black bg-linear-to-r from-white to-slate-300 bg-clip-text text-transparent'>
               Loved by Forward-Thinking Teams
             </h2>
           </motion.div>
@@ -751,7 +751,7 @@ function Home() {
             <div className='inline-block mb-4 px-4 py-1.5 rounded-full border border-indigo-500/20 bg-indigo-500/10 text-indigo-300 text-xs tracking-widest font-semibold'>
               PRICING
             </div>
-            <h2 className='text-5xl font-black bg-gradient-to-r from-white to-slate-300 bg-clip-text text-transparent'>
+            <h2 className='text-5xl font-black bg-linear-to-r from-white to-slate-300 bg-clip-text text-transparent'>
               Simple, Transparent Pricing
             </h2>
             <p className='mt-4 text-slate-400 max-w-xl mx-auto'>
@@ -773,19 +773,19 @@ function Home() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className='relative max-w-5xl mx-auto rounded-3xl overflow-hidden border border-violet-500/30 bg-gradient-to-br from-violet-900/40 via-indigo-900/40 to-[#050816] p-16 text-center'
+            className='relative max-w-5xl mx-auto rounded-3xl overflow-hidden border border-violet-500/30 bg-linear-to-br from-violet-900/40 via-indigo-900/40 to-[#050816] p-16 text-center'
           >
-            <div className='absolute inset-0 bg-[linear-gradient(rgba(139,92,246,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(139,92,246,0.05)_1px,transparent_1px)] bg-[size:30px_30px]' />
+            <div className='absolute inset-0 bg-[linear-linear(rgba(139,92,246,0.05)_1px,transparent_1px),linear-linear(90deg,rgba(139,92,246,0.05)_1px,transparent_1px)] bg-size-[30px_30px]' />
             <motion.div
               className='absolute top-0 left-0 right-0 h-px'
-              style={{ background: 'linear-gradient(90deg, transparent, rgba(139,92,246,0.8), rgba(6,182,212,0.8), transparent)' }}
+              style={{ background: 'linear-linear(90deg, transparent, rgba(139,92,246,0.8), rgba(6,182,212,0.8), transparent)' }}
               animate={{ opacity: [0.4, 1, 0.4] }}
               transition={{ duration: 3, repeat: Infinity }}
             />
 
             <div className='relative z-10'>
               <div className='text-violet-300 text-sm tracking-widest font-semibold mb-4'>✦ START TODAY</div>
-              <h2 className='text-5xl md:text-6xl font-black bg-gradient-to-r from-white via-violet-200 to-cyan-300 bg-clip-text text-transparent leading-tight mb-6'>
+              <h2 className='text-5xl md:text-6xl font-black bg-linear-to-r from-white via-violet-200 to-cyan-300 bg-clip-text text-transparent leading-tight mb-6'>
                 Ready to Redefine<br />How Your Team Works?
               </h2>
               <p className='text-slate-400 text-lg max-w-xl mx-auto mb-10'>
@@ -793,7 +793,7 @@ function Home() {
               </p>
               <div className='flex flex-wrap justify-center gap-4'>
                 <Link to='/register'
-                  className='group relative overflow-hidden rounded-2xl bg-gradient-to-r from-violet-600 to-indigo-600 px-10 py-4 text-lg font-bold transition-all duration-300 hover:scale-105 shadow-2xl shadow-violet-500/30'>
+                  className='group relative overflow-hidden rounded-2xl bg-linear-to-r from-violet-600 to-indigo-600 px-10 py-4 text-lg font-bold transition-all duration-300 hover:scale-105 shadow-2xl shadow-violet-500/30'>
                   <span className='relative z-10'>Start Free Trial</span>
                   <motion.div className='absolute inset-0 bg-white/10' initial={{ x: '-100%' }} whileHover={{ x: '100%' }} transition={{ duration: 0.5 }} />
                 </Link>
@@ -810,7 +810,7 @@ function Home() {
         <footer className='border-t border-white/10 backdrop-blur-xl'>
           <div className='max-w-7xl mx-auto px-10 py-16 grid grid-cols-2 md:grid-cols-4 gap-10'>
             <div className='col-span-2 md:col-span-1'>
-              <h3 className='text-2xl font-black bg-gradient-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent mb-3'>AETHER</h3>
+              <h3 className='text-2xl font-black bg-linear-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent mb-3'>AETHER</h3>
               <p className='text-slate-500 text-sm leading-relaxed'>The AI-powered workplace platform built for the enterprises of tomorrow.</p>
             </div>
             {[
