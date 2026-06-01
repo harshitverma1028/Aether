@@ -86,7 +86,11 @@ function WakeWordListener() {
           text.includes('ether') ||
 
           text.includes('aether') ||
-          text.includes('chirag')
+
+          text.includes('chirag') || 
+
+          text.includes('gargi') ||
+          text.includes('gaargi')
 
         ) {
 
