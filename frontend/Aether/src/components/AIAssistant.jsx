@@ -1,6 +1,7 @@
 import { useRef, useState } from 'react'
 import axios from 'axios'
 import useAuthStore from '../store/authStore'
+import { handleVoiceCommand} from '../utils/voiceCommands'
 
 function VoiceAssistant() {
 
@@ -51,7 +52,10 @@ function VoiceAssistant() {
 
       setTranscript(text)
 
-      handleCommand(text)
+     handleVoiceCommand(
+  text,
+  logout
+)
     }
 
     recognition.onend = () => {
@@ -77,9 +81,8 @@ function VoiceAssistant() {
 
     console.log(text)
 
-    // =========================
+    // 
     // CREATE TASK
-    // =========================
 
     if (
       text.includes('task') &&
