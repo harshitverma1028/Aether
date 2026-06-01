@@ -78,7 +78,7 @@ function FeatureCard({ icon, title, description, accent, delay }) {
       />
       <div
         className='absolute top-0 left-0 right-0 h-px opacity-0 group-hover:opacity-100 transition-opacity duration-500'
-        style={{ background: `linear-linear(90deg, transparent, ${accent}80, transparent)` }}
+        style={{ background: `linear-gradient(90deg, transparent, ${accent}80, transparent)` }}
       />
 
       <div className='relative z-10'>
@@ -292,7 +292,7 @@ function Home() {
       <div className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-200 h-200 rounded-full bg-indigo-900/10 blur-3xl pointer-events-none' />
 
       {/* ── Grid Overlay ── */}
-      <div className='absolute inset-0 bg-[linear-linear(rgba(255,255,255,0.02)_1px,transparent_1px),linear-linear(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-size-[40px_40px] pointer-events-none' />
+      <div className='absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-size-[40px_40px] pointer-events-none' />
 
       {/* ── Floating Particles ── */}
       <div className='absolute inset-0 pointer-events-none overflow-hidden'>
@@ -519,7 +519,7 @@ function Home() {
               style={{
                 height: `${h}%`,
                 background:
-                  'linear-linear(to top, #8b5cf6, #06b6d4)',
+                  'linear-gradient(to top, #8b5cf6, #06b6d4)',
                 boxShadow:
                   '0 0 20px rgba(139,92,246,0.6)',
               }}
@@ -775,10 +775,10 @@ function Home() {
             transition={{ duration: 0.7 }}
             className='relative max-w-5xl mx-auto rounded-3xl overflow-hidden border border-violet-500/30 bg-linear-to-br from-violet-900/40 via-indigo-900/40 to-[#050816] p-16 text-center'
           >
-            <div className='absolute inset-0 bg-[linear-linear(rgba(139,92,246,0.05)_1px,transparent_1px),linear-linear(90deg,rgba(139,92,246,0.05)_1px,transparent_1px)] bg-size-[30px_30px]' />
+            <div className='absolute inset-0 bg-[linear-gradient(rgba(139,92,246,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(139,92,246,0.05)_1px,transparent_1px)] bg-size-[30px_30px]' />
             <motion.div
               className='absolute top-0 left-0 right-0 h-px'
-              style={{ background: 'linear-linear(90deg, transparent, rgba(139,92,246,0.8), rgba(6,182,212,0.8), transparent)' }}
+              style={{ background: 'linear-gradient(90deg, transparent, rgba(139,92,246,0.8), rgba(6,182,212,0.8), transparent)' }}
               animate={{ opacity: [0.4, 1, 0.4] }}
               transition={{ duration: 3, repeat: Infinity }}
             />
