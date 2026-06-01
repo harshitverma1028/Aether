@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const AI_API = 'http://127.0.0.1:8000'
+const AI_API = 'https://aether-1-rqsx.onrender.com'
 
 export const askAI = async (prompt) => {
 
