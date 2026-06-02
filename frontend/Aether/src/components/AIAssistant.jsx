@@ -130,9 +130,9 @@ function VoiceAssistant() {
       return
     }
 
-    // =========================
+    //
     // CREATE MEETING
-    // =========================
+    // 
 
     if (
       text.includes('meeting') &&
@@ -178,9 +178,7 @@ function VoiceAssistant() {
       return
     }
 
-    // =========================
     // OPEN TASKS
-    // =========================
 
     if (
       text.includes('open tasks') ||
@@ -196,9 +194,9 @@ function VoiceAssistant() {
       return
     }
 
-    // =========================
+    // 
     // OPEN MEETINGS
-    // =========================
+    //
 
     if (
       text.includes('open meetings') ||
@@ -214,9 +212,9 @@ function VoiceAssistant() {
       return
     }
 
-    // =========================
+    // 
     // DASHBOARD
-    // =========================
+    // 
 
     if (
       text.includes('dashboard')
@@ -228,9 +226,9 @@ function VoiceAssistant() {
       return
     }
 
-    // =========================
+    //
     // LOGOUT
-    // =========================
+    //
 
     if (
       text.includes('logout') ||
@@ -248,9 +246,9 @@ function VoiceAssistant() {
       return
     }
 
-    // =========================
+    // 
     // UNKNOWN COMMAND
-    // =========================
+    //
 
     alert(
       `Command not recognized:\n${command}`
@@ -290,7 +288,7 @@ function VoiceAssistant() {
 
       </div>
 
-      <div className='mt-6 text-slate-400'>
+      <div className='mt-6 text-white'>
 
         Try saying:
 
