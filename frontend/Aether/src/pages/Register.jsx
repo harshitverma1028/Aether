@@ -30,7 +30,7 @@ function Register() {
   }
 
   return (
-    <div className='min-h-screen flex items-center justify-center bg-slate-950 text-white'>
+    <div className='min-h-screen flex items-center justify-center bg-transparent text-white'>
       <form
         onSubmit={handleSubmit}
         className='w-full max-w-md bg-white/5 backdrop-blur-lg border border-white/10 rounded-3xl p-8'

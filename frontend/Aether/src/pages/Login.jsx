@@ -3,6 +3,12 @@ import { Link, useNavigate } from 'react-router-dom'
 import API from '../api/axios'
 import useAuthStore from '../store/authStore'
 
+
+//  live users
+
+import socket from '../socket'
+
+
 function Login() {
   const navigate = useNavigate()
 
@@ -29,6 +35,16 @@ function Login() {
 
 
       login(res.data.user, res.data.token)
+
+
+      socket.emit(
+  'userOnline',
+  {
+    id: res.data.user.id,
+    name: res.data.user.name,
+    role: res.data.user.role
+  }
+)
 
 if (
   res.data.user.role === 'admin'

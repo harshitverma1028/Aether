@@ -4,6 +4,8 @@ import axios from 'axios'
 import Sidebar from '../components/Sidebar'
 import Navbar from '../components/Navbar'
 
+import TeamPresence from '../components/TeamPresence'
+
 import {
   FaUsers,
   FaTasks,
@@ -128,9 +130,17 @@ function AdminDashboard() {
 
           </div>
 
+        <div  className='rounded-3xl  mt-6'>
+
+          <TeamPresence />
+
+
+        </div>
+
+
           {/* Recent Users */}
 
-          <div className='bg-white/5 border border-white/10 rounded-3xl p-6 mt-10'>
+          <div className='bg-white/5 border border-white/10 rounded-3xl p-6 mt-6'>
 
             <h2 className='text-2xl font-bold mb-5'>
               Recent Users

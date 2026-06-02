@@ -55,14 +55,76 @@ app.get('/', (req, res) => {
   res.send('Backend Running')
 })
 
+
+//    live users
+
+
+const onlineUsers = new Map()
+
+
+
+// io.on('connection', (socket) => {
+
+//   console.log('User Connected:', socket.id)
+
+//   socket.on('disconnect', () => {
+//     console.log('User Disconnected')
+//   })
+// })
+
+
+
+
+
 io.on('connection', (socket) => {
 
-  console.log('User Connected:', socket.id)
+  console.log(
+    'User Connected:',
+    socket.id
+  )
 
-  socket.on('disconnect', () => {
-    console.log('User Disconnected')
-  })
+  socket.on(
+    'userOnline',
+    (user) => {
+
+      onlineUsers.set(
+        socket.id,
+        user
+      )
+
+      io.emit(
+        'onlineUsers',
+        Array.from(
+          onlineUsers.values()
+        )
+      )
+    }
+  )
+
+  socket.on(
+    'disconnect',
+    () => {
+
+      onlineUsers.delete(
+        socket.id
+      )
+
+      io.emit(
+        'onlineUsers',
+        Array.from(
+          onlineUsers.values()
+        )
+      )
+
+      console.log(
+        'User Disconnected'
+      )
+    }
+  )
 })
+
+
+
 
 const PORT = process.env.PORT || 5000
 
