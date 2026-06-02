@@ -90,7 +90,11 @@ function WakeWordListener() {
           text.includes('chirag') || 
 
           text.includes('gargi') ||
-          text.includes('gaargi')
+          text.includes('gaargi') ||
+          text.includes('resona') ||
+          text.includes('veyra') ||
+          text.includes('invoca')
+          
 
         ) {
 
