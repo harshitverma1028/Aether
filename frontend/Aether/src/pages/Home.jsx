@@ -225,18 +225,6 @@ function Home() {
       description: 'Execute commands, manage workflows, and interact with your entire workspace using cutting-edge voice AI—hands-free, always on.',
     },
     {
-      icon: '🔐', title: 'Enterprise Security', accent: '#10b981',
-      description: 'Bank-grade encryption, role-based access control, audit logs, and SOC 2 compliant infrastructure to keep your data safe.',
-    },
-    {
-      icon: '☁️', title: 'Cloud Infrastructure', accent: '#f59e0b',
-      description: '99.99% uptime SLA with global edge deployment, instant autoscaling, and zero-downtime deployments across all regions.',
-    },
-    {
-      icon: '🧠', title: 'Deep Learning Engine', accent: '#a855f7',
-      description: 'Proprietary ML models trained on enterprise workflows continuously refine predictions, anomaly detection, and process optimization.',
-    },
-    {
       icon: '⚡', title: 'Real-Time Collaboration', accent: '#22d3ee',
       description: 'Live document co-editing, presence indicators, threaded comments, and instant notifications for teams across time zones.',
     },

@@ -24,15 +24,26 @@ const server = http.createServer(app)
 const io = new Server(server, {
   cors: {
     origin: [
-      'https://aether-b14x.onrender.com',
+      'http://localhost:5173',
       'https://aether-theta-two.vercel.app'
     ],
     methods: ['GET', 'POST'],
+    credentials: true,
   },
 })
 app.set('io', io)
 
-app.use(cors())
+const allowedOrigins = [
+  'http://localhost:5173',
+  'https://aether-theta-two.vercel.app'
+]
+
+app.use(
+  cors({
+    origin: allowedOrigins,
+    credentials: true,
+  })
+)
 app.use(express.json())
 
 app.use('/api/auth', authRoutes)
