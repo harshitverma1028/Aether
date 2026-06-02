@@ -10,6 +10,7 @@ import AIAssistant from '../components/AIAssistant'
 import VoiceAssistant from '../components/VoiceAssistant'
 import ProductivityInsights from '../components/ProductivityInsights'
 
+
 function Dashboard() {
   return (
     <div className="flex bg-linear min-h-screen text-white">
@@ -60,6 +61,12 @@ function Dashboard() {
               />
             </div>
           </div>
+
+
+
+        
+
+
 
           <div className='mt-10'>
             <ActivityFeed />
