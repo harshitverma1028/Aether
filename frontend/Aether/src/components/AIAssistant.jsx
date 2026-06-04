@@ -292,7 +292,11 @@ function VoiceAssistant() {
 
         Try saying:
 
-        <ul className='mt-3 flex flex-col gap-2 list-disc list-inside'>
+        <ul className='mt-3 flex flex-col gap-2 list-disc list-inside'> 
+
+          <li>
+            Say! Aether,ether,jarvis and then give command
+          </li>
 
           <li>
             Create task title Build Dashboard
