@@ -93,7 +93,8 @@ function WakeWordListener() {
           text.includes('gaargi') ||
           text.includes('resona') ||
           text.includes('veyra') ||
-          text.includes('invoca')
+          text.includes('invoca') ||
+          text.includes('jarvis')
           
 
         ) {
