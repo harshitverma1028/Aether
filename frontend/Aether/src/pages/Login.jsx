@@ -98,7 +98,7 @@ if (
             to='/register'
             className='text-center text-cyan-400'
           >
-            Create new account
+            Create a new account
           </Link>
         </div>
       </form>
