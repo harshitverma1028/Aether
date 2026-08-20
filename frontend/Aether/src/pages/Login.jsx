@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import API from '../api/axios'
 import useAuthStore from '../store/authStore'
 import socket from '../socket'
+import WarpTransition from '../components/WarpTransition'
 
 // Animated wave bars for logo
 function WaveBars() {
@@ -69,8 +70,14 @@ function MicIcon() {
 function Login() {
   const navigate = useNavigate()
   const login = useAuthStore((state) => state.login)
-  const [formData, setFormData] = useState({ email: '', password: '' })
-  const [loading, setLoading] = useState(false)
+ const [formData, setFormData] = useState({
+  email: '',
+  password: ''
+})
+
+const [loading, setLoading] = useState(false)
+const [showWarp, setShowWarp] = useState(false)
+const [destination, setDestination] = useState('/dashboard')
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
@@ -90,9 +97,11 @@ function Login() {
       if (res.data.user.role === 'admin') {
         navigate('/admin')
       } else {
-        navigate('/dashboard')
+       setDestination('/dashboard')
       }
-    } catch (error) {
+      setShowWarp(true)
+      }
+     catch (error) {
       console.log(error)
     } finally {
       setLoading(false)
@@ -101,6 +110,16 @@ function Login() {
 
   return (
     <>
+
+
+
+    {showWarp && (
+  <WarpTransition
+    destination={destination}
+    navigate={navigate}
+  />
+)}
+
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap');
 
