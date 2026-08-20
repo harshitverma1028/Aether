@@ -18,8 +18,8 @@ function WarpTransition({ destination, navigate }) {
     const stars = []
     const NUM_STARS = 800
 
-    let speed = 0.8
-    let targetSpeed = 0.8
+    let speed = 1.0
+    let targetSpeed = 1.0
     let animationFrame
 
     // --------------------------------------------------
